@@ -1,0 +1,20 @@
+{% extends 'paginas/padre.html' %}
+{% block titulo %}{{ detalle_post.tittle }}{% endblock titulo %}
+{% block subtitulo %}{% endblock subtitulo %}
+{% block content %}
+
+<br><br>
+<h2>{{ detalle_post.subtitle}}</h2>
+<br>
+<br>
+<h3>{{ detalle_post.descr }}</h3>
+<br>
+<p>{{ detalle_post.relleno | safe }}</p>
+<br>
+<h4>Creado por {{ detalle_post.usuario }} en {{detalle_post.fecha }}</h4>
+
+
+
+<img src="{{ detalle_post.imagen }}" alt="">
+
+{% endblock content %}

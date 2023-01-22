@@ -1,0 +1,53 @@
+{% extends 'paginas/padre.html' %}
+{% block titulo %}Blogs{% endblock titulo %}
+{% block subtitulo %}{% endblock subtitulo %}
+{% block content %}
+<a href="{% url 'app:crearblog' %}">Crear Blog
+    
+
+</a>
+<br>
+<br>
+{% if blogs %}
+{% for blog in blogs %}
+
+<br>
+<br>
+<br>
+<br>
+
+<div>
+    <a href=" {% url 'app:detalle_post' blog.id %} ">
+        <h2>
+            {{ blog.tittle }}
+        </h2>
+        
+    </a>  
+    <h3>
+        {{ blog.descr }}
+
+    </h3>
+    
+    
+
+    <p>Publicado por {{ blog.usuario}}
+        <a href=""></a>
+        {{ blog.fecha}}
+        <img src="{{ blog.imagen }}" alt="">
+
+    </p>
+<a href="{%  url 'app:eliminarblog' blog.id %}">
+    Eliminar
+</a>
+<br><br>
+<p> <a href="{%  url 'app:editarblog' blog.id %}">Editar blog</a></p>
+
+</div>
+<hr>
+{% endfor %}
+{% else %}
+<h1>No existen blogs registrados</h1>
+{% endif %}
+<p>{{ mensaje }}</p>
+
+{% endblock content %}

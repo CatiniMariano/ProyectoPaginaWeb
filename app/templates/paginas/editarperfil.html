@@ -1,0 +1,15 @@
+{% extends 'paginas/padre.html' %}
+{% block titulo %}Editar Perfil{% endblock %}
+{% block subtitulo %}{% endblock %}
+{% block relleno %}
+<form action="/editarperfil/" method="POST"> {% csrf_token %}
+    <table>
+
+    {{ form.as_table }}
+    
+    </table>
+    <input type="submit" value="Editar">
+
+    <p>{{ mensaje }}</p>
+</form>
+{% endblock %}

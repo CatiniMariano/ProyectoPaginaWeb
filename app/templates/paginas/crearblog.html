@@ -1,0 +1,25 @@
+{% extends 'paginas/padre.html' %}
+{% block titulo %}Blogs{% endblock titulo %}
+{% block subtitulo %}{% endblock subtitulo %}
+{% block content %}
+<form action="" method="POST"> {% csrf_token %}
+
+
+    <table>
+
+        {{form.as_table}}
+
+
+
+    </table>
+
+
+    <input type="submit" value="Subir post">
+
+
+
+
+</form>
+
+
+{% endblock content %}
